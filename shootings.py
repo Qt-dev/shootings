@@ -11,7 +11,10 @@ js = Bundle('js/lib/*.js')
 assets.register('js_libs', js)
 
 # Bundle the backbone files
-bb = Bundle('js/backbone/**/*.js', 'js/backbone/*.js',
+bb = Bundle('js/backbone/*.js',
+        'js/backbone/models/*.js',
+        'js/backbone/collections/*.js',
+        'js/backbone/views/*.js',
         filters='jsmin',
         output='gen/app.js')
 assets.register('app_js', bb)
