@@ -1,6 +1,12 @@
 from flask import Flask, render_template
 import requests, json
+from flask.ext.assets import Environment, Bundle
+
 app = Flask(__name__)
+assets = Environment(app)
+
+js = Bundle('js/lib/*.js')
+assets.register('js_libs', js)
 
 @app.route('/')
 def home():
