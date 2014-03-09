@@ -5,7 +5,9 @@ from flask.ext.assets import Environment, Bundle
 app = Flask(__name__)
 assets = Environment(app)
 
-js = Bundle('js/lib/*.js')
+js = Bundle('js/lib/*.js',
+       filters='jsmin',
+       output='gen/lib.js')
 assets.register('js_libs', js)
 
 @app.route('/')
