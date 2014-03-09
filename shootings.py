@@ -39,9 +39,19 @@ def get_shootings():
 # It gets data from the API, in case we implement an alternative DB saving path one day.
 def get_shootings_from_api():
   res = requests.get("http://data.sfgov.org/resource/yitu-d5am.json")
-  return res.json()
 
+  # Filter the shootings with no location
+  res = filter_shootings(res)
 
+  return res
+
+def filter_shootings(shootings):
+  result = []
+  for shooting in shootings:
+    if 'locations' in shooting:
+      result.append(shooting)
+
+  return result
 
 if __name__ == '__main__':
   app.run(debug=True)
