@@ -5,10 +5,17 @@ from flask.ext.assets import Environment, Bundle
 app = Flask(__name__)
 assets = Environment(app)
 
-js = Bundle('js/lib/*.js',
-       filters='jsmin',
-       output='gen/lib.js')
+
+# Bundle the needed libraries
+js = Bundle('js/lib/*.js')
 assets.register('js_libs', js)
+
+# Bundle the backbone files
+bb = Bundle('js/backbone/**/*.js', 'js/backbone/*.js',
+        filters='jsmin',
+        output='gen/app.js')
+assets.register('app_js', bb)
+
 
 @app.route('/')
 def home():
