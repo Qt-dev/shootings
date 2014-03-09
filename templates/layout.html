@@ -3,6 +3,7 @@
   <head>
     <title>Shooting locations in San Francisco</title>
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvjSGT1ejAfHc7_fdVMeKZcdHTHH8YsYY&sensor=true"></script>
 
 {% assets "js_libs" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
@@ -14,6 +15,6 @@
   </head>
 
   <body>
-    {% block body %}{% endblock %}
+    <div class="container">{% block body %}{% endblock %}</div>
   </body>
 </html>
