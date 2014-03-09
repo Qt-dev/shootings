@@ -7,7 +7,9 @@ assets = Environment(app)
 
 
 # Bundle the needed libraries
-js = Bundle('js/lib/*.js')
+js = Bundle('js/lib/jquery.js',
+            'js/lib/underscore.js',
+            'js/lib/backbone.js')
 assets.register('js_libs', js)
 
 # Bundle the backbone files
