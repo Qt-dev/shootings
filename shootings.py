@@ -53,7 +53,7 @@ def get_jasmine():
 # API helper.
 # It gets data from the API, in case we implement an alternative DB saving path one day.
 def get_shootings_from_api():
-  res = requests.get("http://data.sfgov.org/resource/yitu-d5am.json")
+  res = requests.get("http://data.sfgov.org/resource/yitu-d5am.json").json()
 
   # Filter the shootings with no location
   res = filter_shootings(res)
