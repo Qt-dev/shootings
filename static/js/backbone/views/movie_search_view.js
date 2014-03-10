@@ -7,6 +7,6 @@ SearchView = Backbone.View.extend({
 
   searchByMovie: function(){
     title = $('#search-textbox').val();
-    this.collection.trigger('filter');
+    this.collection.trigger('filter', title);
   }
 });

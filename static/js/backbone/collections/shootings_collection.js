@@ -9,7 +9,7 @@ ShootingCollection = Backbone.Collection.extend({
 
   byMovie: function(movie) {
     filtered = this.filter(function(shooting) {
-      return shooting.get("title") === movie;
+      return(shooting.get("title").indexOf(movie) !== -1);
     });
     this.filteredShootings = new ShootingCollection(filtered);
 
