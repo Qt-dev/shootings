@@ -1,18 +1,24 @@
-* {
+#search-box{
   margin:0;
   padding:0;
+  height:50px;
+  width:100%;
+}
+#search-box input{
+  float:left;
+  height:50px;
+  width:75%;
 }
 
-body{
-  min-height:100%;
-}
-
-.container {
-  height:100%;
+#search-box button{
+  float:right;
+  width:25%;
+  height:50px;
 }
 
 #map-canvas{
   position: absolute;
+  top:50px;
   height:100%;
   width:100%;
 }

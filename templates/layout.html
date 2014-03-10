@@ -2,7 +2,12 @@
 <html>
   <head>
     <title>Shooting locations in San Francisco</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvjSGT1ejAfHc7_fdVMeKZcdHTHH8YsYY&sensor=true"></script>
 
 {% assets "js_libs" %}
@@ -12,9 +17,10 @@
 {% assets "app_js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
 {% endassets %}
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-    <div class="container">{% block body %}{% endblock %}</div>
+    {% block body %}{% endblock %}
   </body>
 </html>
