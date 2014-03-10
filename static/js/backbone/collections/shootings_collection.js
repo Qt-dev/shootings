@@ -1,8 +1,9 @@
 ShootingCollection = Backbone.Collection.extend({
   model: Shooting,
   url: '/shootings',
-  filteredShootings: null,
+  filteredShootings: this.models,
   titles: null,
+  geocoder: new google.maps.Geocoder(),
 
   initialize: function(){
     this.listenTo(this, 'filter', this.byMovie);
@@ -15,9 +16,12 @@ ShootingCollection = Backbone.Collection.extend({
   },
 
   byMovie: function(movie) {
-    filtered = this.filter(function(shooting) {
-      return(shooting.get("title").indexOf(movie) !== -1);
+    var filtered = this.filter( function(shooting) {
+      var title = shooting.get("title").toLowerCase();
+      return(title.indexOf(movie) !== -1);
     });
+
+    console.log(filtered)
     this.filteredShootings = new ShootingCollection(filtered);
 
     this.trigger('filtered');
