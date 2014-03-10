@@ -1,9 +1,12 @@
+/* Search boxes */
 #search-box{
   margin:0;
   padding:0;
   height:50px;
   width:100%;
+  z-index: 99;
 }
+
 #search-box input{
   float:left;
   height:50px;
@@ -16,9 +19,39 @@
   height:50px;
 }
 
-#map-canvas{
+
+
+/* JQueryUI Autocomplete */
+.ui-helper-hidden-accessible { display:none; }
+
+ul.ui-autocomplete{
+  max-height:30%;
+  width:75%;
+  float:left;
+  margin:0;
+  padding:0;
+  background-color: white;
+  list-style: none;
+  display: block;
+  z-index:0;
+}
+
+li.ui-menu-item{
+  line-height: 1.4em;
+  padding:4px;
+  border: 1px #CCC solid;
+}
+
+
+/* Map Display */
+#map-container{
   position: absolute;
   top:50px;
   height:100%;
   width:100%;
+}
+#map-canvas{
+  height:100%;
+  width:100%;
+  z-index: -1;
 }
