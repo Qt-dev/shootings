@@ -21,8 +21,12 @@ ShootingCollection = Backbone.Collection.extend({
       return(title.indexOf(movie) !== -1);
     });
 
-    console.log(filtered)
+    _.each(filtered, function(shooting){
+      shooting.setGeocode();
+    });
+
     this.filteredShootings = new ShootingCollection(filtered);
+
 
     this.trigger('filtered');
   },
