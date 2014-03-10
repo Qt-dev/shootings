@@ -1,4 +1,4 @@
-Shootings = Backbone.Collection.extend({
+ShootingCollection = Backbone.Collection.extend({
   model: Shooting,
   url: '/shootings'
 });

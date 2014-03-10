@@ -3,8 +3,11 @@ import requests, json
 from flask.ext.assets import Environment, Bundle
 
 app = Flask(__name__)
-assets = Environment(app)
 
+####################################
+######### Assets bundling ##########
+####################################
+assets = Environment(app)
 
 # Bundle the needed libraries
 js = Bundle('js/lib/jquery.js',
@@ -21,7 +24,12 @@ bb = Bundle('js/backbone/*.js',
         output='gen/app.js')
 assets.register('app_js', bb)
 
+testjs = Bundle('js/spec/*.js')
+assets.register('app_test', testjs)
 
+####################################
+##########  Flask Routes  ##########
+####################################
 @app.route('/')
 def home():
   return render_template('home.html')
@@ -34,7 +42,14 @@ def get_shootings():
   # Transform the list returned by the url into a json list
   return json.dumps(shootings)
 
+@app.route('/jasmine', methods=["GET"])
+def get_jasmine():
+  return render_template('jasmine.html')
 
+
+####################################
+############  Helpers  #############
+####################################
 # API helper.
 # It gets data from the API, in case we implement an alternative DB saving path one day.
 def get_shootings_from_api():
@@ -52,6 +67,9 @@ def filter_shootings(shootings):
       result.append(shooting)
 
   return result
+
+
+
 
 if __name__ == '__main__':
   app.run(debug=True)
