@@ -12,7 +12,8 @@ SearchView = Backbone.View.extend({
 
   autoComplete: function(test){
     $('#search-textbox').autocomplete({
-      source: this.collection.titles
+      source: this.collection.titles,
+      appendTo: "#ui-menu-container"
     });
   }
 

@@ -22,15 +22,18 @@
 
 
 /* JQueryUI Autocomplete */
+#ui-menu-container{ max-height: 30% }
 .ui-helper-hidden-accessible { display:none; }
 
 ul.ui-autocomplete{
-  max-height:30%;
-  width:75%;
+  width:100%;
   float:left;
   margin:0;
   padding:0;
+
   background-color: white;
+
+
   list-style: none;
   display: block;
   z-index:0;
@@ -38,8 +41,12 @@ ul.ui-autocomplete{
 
 li.ui-menu-item{
   line-height: 1.4em;
-  padding:4px;
+  padding:2px 14px;
   border: 1px #CCC solid;
+}
+
+a.ui-corner-all{
+  color: #222;
 }
 
 

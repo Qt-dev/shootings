@@ -3,4 +3,6 @@ $(document).ready(function(){
 
   mapView = new MapView({ collection: shootings });
   searchView = new SearchView({ collection: shootings  });
+
+
 });
