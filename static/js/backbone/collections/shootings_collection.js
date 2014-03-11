@@ -30,7 +30,7 @@ ShootingCollection = Backbone.Collection.extend({
     this.filteredShootings = new ShootingCollection(filtered);
 
 
-    this.trigger('filtered');
+    this.trigger('filtered', this.filteredShootings.models);
   },
 
   setTitles: function(){
