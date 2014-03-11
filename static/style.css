@@ -1,0 +1,66 @@
+/* Small tweak to get everything to print over the map */
+div{
+  position:absolute;
+}
+
+/* Search boxes */
+#search-box{
+  margin:0;
+  padding:0;
+  height:50px;
+  width:100%;
+  z-index: 99;
+}
+
+#search-box input{
+  float:left;
+  height:50px;
+  width:75%;
+}
+
+#search-box button{
+  float:right;
+  width:25%;
+  height:50px;
+}
+
+
+
+/* JQueryUI Autocomplete */
+#ui-menu-container{ z-index: 2; }
+.ui-helper-hidden-accessible { display:none; }
+
+ul.ui-autocomplete{
+  width:100%;
+  float:left;
+  margin:0;
+  padding:0;
+
+  background-color: white;
+
+
+  list-style: none;
+  display: block;
+}
+
+li.ui-menu-item{
+  line-height: 1.4em;
+  padding:2px 14px;
+  border: 1px #CCC solid;
+}
+
+a.ui-corner-all{
+  color: #222;
+}
+
+
+/* Map Display */
+#map-container{
+  top:50px;
+  height:100%;
+  width:100%;
+}
+#map-canvas{
+  height:100%;
+  width:100%;
+}

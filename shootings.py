@@ -3,13 +3,38 @@ import requests, json
 from flask.ext.assets import Environment, Bundle
 
 app = Flask(__name__)
+
+####################################
+######### Assets bundling ##########
+####################################
 assets = Environment(app)
 
-js = Bundle('js/lib/*.js',
-       filters='jsmin',
-       output='gen/lib.js')
+# Bundle the needed libraries
+js = Bundle('js/lib/jquery.js',
+            'js/lib/underscore.js',
+            'js/lib/backbone.js')
 assets.register('js_libs', js)
 
+foundation = Bundle('js/lib/modernizr.min.js',
+                    'js/lib/foundation.min.js')
+assets.register('foundation', foundation)
+
+# Bundle the backbone files
+bb = Bundle('js/backbone/*.js',
+        'js/backbone/models/*.js',
+        'js/backbone/collections/*.js',
+        'js/backbone/views/*.js',
+        #filters='jsmin',
+        #output='gen/app.js'
+        )
+assets.register('app_js', bb)
+
+testjs = Bundle('js/spec/*.js')
+assets.register('app_test', testjs)
+
+####################################
+##########  Flask Routes  ##########
+####################################
 @app.route('/')
 def home():
   return render_template('home.html')
@@ -22,12 +47,32 @@ def get_shootings():
   # Transform the list returned by the url into a json list
   return json.dumps(shootings)
 
+@app.route('/jasmine', methods=["GET"])
+def get_jasmine():
+  return render_template('jasmine.html')
 
+
+####################################
+############  Helpers  #############
+####################################
 # API helper.
 # It gets data from the API, in case we implement an alternative DB saving path one day.
 def get_shootings_from_api():
-  res = requests.get("http://data.sfgov.org/resource/yitu-d5am.json")
-  return res.json()
+  res = requests.get("http://data.sfgov.org/resource/yitu-d5am.json").json()
+
+  # Filter the shootings with no location
+  res = filter_shootings(res)
+
+  return res
+
+def filter_shootings(shootings):
+  result = []
+  for shooting in shootings:
+    if 'locations' in shooting:
+      result.append(shooting)
+
+  return result
+
 
 
 
