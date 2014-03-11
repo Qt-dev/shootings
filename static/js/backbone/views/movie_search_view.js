@@ -2,7 +2,7 @@ SearchView = Backbone.View.extend({
   el: '#search-box',
   events: {
       'keyup #search-textbox': 'autoComplete',
-      'click #submit-search' : 'searchByMovie'
+      'submit' : 'searchByMovie'
   },
 
   searchByMovie: function(){
