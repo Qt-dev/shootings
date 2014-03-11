@@ -1,3 +1,8 @@
+/* Small tweak to get everything to print over the map */
+div{
+  position:absolute;
+}
+
 /* Search boxes */
 #search-box{
   margin:0;
@@ -22,7 +27,7 @@
 
 
 /* JQueryUI Autocomplete */
-#ui-menu-container{ max-height: 30% }
+#ui-menu-container{ z-index: 2; }
 .ui-helper-hidden-accessible { display:none; }
 
 ul.ui-autocomplete{
@@ -36,7 +41,6 @@ ul.ui-autocomplete{
 
   list-style: none;
   display: block;
-  z-index:0;
 }
 
 li.ui-menu-item{
@@ -52,7 +56,6 @@ a.ui-corner-all{
 
 /* Map Display */
 #map-container{
-  position: absolute;
   top:50px;
   height:100%;
   width:100%;
@@ -60,5 +63,4 @@ a.ui-corner-all{
 #map-canvas{
   height:100%;
   width:100%;
-  z-index: -1;
 }
