@@ -16,6 +16,8 @@ ShootingCollection = Backbone.Collection.extend({
   },
 
   byMovie: function(movie) {
+
+    movie = movie.toLowerCase();
     var filtered = this.filter( function(shooting) {
       var title = shooting.get("title").toLowerCase();
       return(title.indexOf(movie) !== -1);
