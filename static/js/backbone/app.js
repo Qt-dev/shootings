@@ -2,7 +2,12 @@ App = Backbone.View.extend({
     el: 'body',
 
     initialize: function() {
+      var self = this;
       this.shootings = new ShootingCollection();
+      this.shootings.fetch()
+        .complete(function(){
+          self.shootings.setTitles();
+      });
       this.SearchView = new SearchView({
         collection: this.shootings
       });
