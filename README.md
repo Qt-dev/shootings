@@ -1,5 +1,5 @@
 # Movie shooting locations in San Francisco
-View this on [Heroku](http://movie-shootings-in-sf.herokuapp.com/jasmine)  
+View this on [Heroku](http://movie-shootings-in-sf.herokuapp.com/jasmine)
 By Quentin Devauchelle - [LinkedIn](http://www.linkedin.com/profile/view?id=160320613) / [Blog](http://qt-dev.tumblr.com)
 
 ## Stack
@@ -31,6 +31,14 @@ It was my first time using Google Maps API, and Backbone. I learned a lot about 
 
 The tests I have for [jasmine](http://movie-shootings-in-sf.herokuapp.com/jasmine) are just testing core features of the javascript backend. It was also my first time using Sinon, and Jasmine that much. Testing Backbone was interesting though
 
+## My process
+I played with some sandbox to test the things I did not know on the side. TDD was a bad option for what I was trying to do, since I did not know about the way to use most of what I was using before I used it.
+
+So, I split everything in small tasks on trello, and followed these.
+
+In these tasks, I would make a new branch for every "feature" I recognized, and then merging it on master when it was done. You can check the result in github's "Network".
+
+After I finished most of the features and felt I had a good grasp on what was happening, I tested what I felt was critical.
 
 ## If I had more time
 If I had more time, I would test a bit more the javascript part and particularly the view.
