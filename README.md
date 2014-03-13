@@ -43,4 +43,5 @@ After I finished most of the features and felt I had a good grasp on what was ha
 ## If I had more time
 If I had more time, I would test a bit more the javascript part and particularly the view.
 I would also try my luck with integration tests with [PhantomJs](http://phantomjs.org).
+I would also try and expand the infowindow to get more info from themoviedatabase
 
