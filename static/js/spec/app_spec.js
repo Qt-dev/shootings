@@ -112,9 +112,15 @@ describe("Map View", function() {
     });
 
     it("should add pins to the map when calling the corresponding function", function() {
-        var shooting = {
-            position: new google.maps.LatLng(123, -123),
-        };
+        var shooting = new Shooting({
+            attributes: {
+                title: "test movie",
+                director: "me",
+                release_year: "2013",
+                locations: "here"
+            }
+        });
+        shooting.position = new google.maps.LatLng(123, -123);
         this.mapView.addOnePin(shooting);
         expect(this.mapView.pins.length).toEqual(1);
     });
