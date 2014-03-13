@@ -37,7 +37,7 @@ PinView = Backbone.View.extend({
         // marker's popup
         this.infowindow = new google.maps.InfoWindow({
             content: description,
-            maxWidth: 200
+            maxWidth: 350
         });
 
         google.maps.event.addListener(this.marker, 'click', function() {
