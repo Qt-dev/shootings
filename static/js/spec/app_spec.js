@@ -126,3 +126,9 @@ describe("Searching View", function() {
         expect(SearchView).toBeDefined();
     });
 });
+
+describe("Pin View", function() {
+    it("should have a generateText method", function() {
+        expect(HtmlGenerator.generateText).toBeDefined();
+    });
+});
