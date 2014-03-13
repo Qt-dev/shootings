@@ -1,4 +1,4 @@
-# A map of shooting locations in San Francisco
+# Movie shooting locations in San Francisco
 View this on [Heroku](http://movie-shootings-in-sf.herokuapp.com/jasmine)
 By Quentin Devauchelle - [LinkedIn](http://www.linkedin.com/profile/view?id=160320613) / [Blog](http://qt-dev.tumblr.com)
 
@@ -8,7 +8,9 @@ By Quentin Devauchelle - [LinkedIn](http://www.linkedin.com/profile/view?id=1603
 * [Request (HTTP Request simplifaction library)](http://docs.python-requests.org/en/latest/)
 * [Webassets (Python's asset management)](http://webassets.readthedocs.org/en/latest/)
 * [Unittest](http://docs.python.org/2/library/unittest.html)
+
 ### Frontend
+
 * [BackboneJs](http://backbonejs.org/)
 * [Twitter's Bootstrap](http://getbootstrap.com/)
 * [Google Maps JS API V3](https://developers.google.com/maps/documentation/javascript/) for the map and the geolocalisation
