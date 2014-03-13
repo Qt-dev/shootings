@@ -7,8 +7,6 @@ ShootingCollection = Backbone.Collection.extend({
 
   initialize: function(){
     this.listenTo(this, 'filter', this.byMovie);
-
-    var self = this; //To access the collection inside the completed method
   },
 
   byMovie: function(movie) {
