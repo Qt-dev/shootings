@@ -3,6 +3,7 @@ MapView = Backbone.View.extend({
 
     initialize: function() {
         this.listenTo(this.collection, 'filtered', this.addPins);
+        this.listenTo(this.collection, 'closePins', this.closePins);
 
         // I add a function that resizes the container of that map when the window is resized, then I resized to give it the right size.
         $(window).resize(function() {
@@ -37,13 +38,21 @@ MapView = Backbone.View.extend({
                 self.addOnePin(shooting);
             }, 300);
         } else {
-            var marker = new google.maps.Marker({
-                position: shooting.position,
-                map: self.map,
-                title: 'Hello World!'
+            var marker = new PinView({
+                collection: self.collection,
+                model: shooting,
+                map: self.map
             });
+
             self.pins.push(marker);
         }
+    },
+
+
+    closePins: function() {
+        _.each(this.pins, function(pin) {
+            pin.infowindow.close();
+        });
     },
 
     clearPins: function() {
