@@ -1,5 +1,5 @@
 # Movie shooting locations in San Francisco
-View this on [Heroku](http://movie-shootings-in-sf.herokuapp.com/jasmine)
+View this on [Heroku](http://movie-shootings-in-sf.herokuapp.com/jasmine)  
 By Quentin Devauchelle - [LinkedIn](http://www.linkedin.com/profile/view?id=160320613) / [Blog](http://qt-dev.tumblr.com)
 
 ## Stack
