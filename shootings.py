@@ -15,16 +15,12 @@ js = Bundle('js/lib/jquery.js',
             'js/lib/backbone.js')
 assets.register('js_libs', js)
 
-foundation = Bundle('js/lib/modernizr.min.js',
-                    'js/lib/foundation.min.js')
-assets.register('foundation', foundation)
-
 # Bundle the backbone files
 bb = Bundle('js/backbone/models/*.js',
         'js/backbone/collections/*.js',
         'js/backbone/views/*.js',
-        #filters='jsmin',
-        #output='gen/app.js'
+        filters='jsmin',
+        output='gen/app.js'
         )
 assets.register('app_js', bb)
 
