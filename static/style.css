@@ -3,6 +3,10 @@ div{
   position:absolute;
 }
 
+#infowindow{
+  position:relative;
+  width:350px;
+}
 /* Search boxes */
 #search-box{
   margin:0;
