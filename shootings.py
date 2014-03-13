@@ -20,8 +20,7 @@ foundation = Bundle('js/lib/modernizr.min.js',
 assets.register('foundation', foundation)
 
 # Bundle the backbone files
-bb = Bundle('js/backbone/*.js',
-        'js/backbone/models/*.js',
+bb = Bundle('js/backbone/models/*.js',
         'js/backbone/collections/*.js',
         'js/backbone/views/*.js',
         #filters='jsmin',

@@ -1,18 +1,12 @@
 ShootingCollection = Backbone.Collection.extend({
   model: Shooting,
   url: '/shootings',
-  filteredShootings: this.models,
+  filteredShootings: null,
   titles: null,
   geocoder: new google.maps.Geocoder(),
 
   initialize: function(){
     this.listenTo(this, 'filter', this.byMovie);
-
-    var self = this; //To access the collection inside the completed method
-    this.fetch()
-      .complete(function(){
-        self.setTitles();
-    });
   },
 
   byMovie: function(movie) {
