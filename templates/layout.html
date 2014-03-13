@@ -10,7 +10,6 @@
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwKDBSI7KhC1Z5H8aZxWTmcE3hpGRptI&sensor=false"></script>
 
-
 {% assets "js_libs" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
 {% endassets %}
@@ -20,6 +19,7 @@
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
 {% endassets %}
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/backbone/app.js') }}"></script>
   </head>
 
   <body>
